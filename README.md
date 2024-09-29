@@ -95,9 +95,10 @@ Autify assignment
 6. Add duplicate website checking to make sure websites that is feed into the app like www.google.com and https:google.com is treated as one website rather than proccessed as two separate website
 7. Add a --help command to know what commands are available 
 8. Add checking to print out error if an invalid argument is given
-9. Can set up the app as a lambda in AWS
+9. Can set up the app as a serverless
 10. Change the .env to use secrets manager in AWS instead for easier configuration and management
 11. Add more url specific validation and add more normalization of urls
+12. Easier deployment of container to cloud, can use GitHub actions > CodeDeploy > ECR > ECS if used an API, if using serverless GitHub actions > CodeDeploy > Lambda
 
 ## Usecase
 
