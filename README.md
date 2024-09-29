@@ -11,7 +11,7 @@ Autify assignment
 - [Usecase](#usecase)
 
 ## Installation
-
+### Using docker
 1. Clone the repository and cd into the folder:
    ```bash
    git clone https://github.com/TeradonGenesis/autify_assignment.git
@@ -45,8 +45,26 @@ Autify assignment
     REDIS_URL=redis://redis:6379
     ```
 
-## Usage
+### Local environment
 
+1. Clone the repository and cd into the folder:
+   ```bash
+   git clone https://github.com/TeradonGenesis/autify_assignment.git
+   cd autify_assignment
+   ``` 
+2. Start the redis server
+   ```bash
+   redis-server
+   ```
+3. Check the .env.sample configuration for redis is correct
+
+4. Build the app
+   ```bash
+   npm run build
+   ```
+
+## Usage
+### Using docker
 1. Downloading the html file without metadata
     ```bash
     docker-compose run app npm start -- http://www.wikipedia.org
@@ -74,7 +92,34 @@ Autify assignment
     ```bash
     docker-compose run app npm start -- --list
     ```
+### Local environment
+1. Downloading the html file without metadata
+    ```bash
+    npm start -- http://www.wikipedia.org
+    ```
+2. Print out the metadata. Metadata will be cached, previous cache will be refreshed
+    ```bash
+    npm start -- --metadata http://www.wikipedia.org
+    ```
+3. Print out the metadata with more details. Metadata will be cached, previous cache will be refreshed
+    ```bash
+    npm start -- --metadata --verbose http://www.wikipedia.org
+    ```
 
+4. Print out the cached metadata
+    ```bash
+    npm start -- --metadata --cache http://www.wikipedia.org
+    ```
+
+5. Print out the cached metadata with more details
+    ```bash
+    npm start -- --metadata --verbose --cache http://www.wikipedia.org
+    ```
+
+6. List out the files downloaded
+    ```bash
+    npm start -- --list
+    ```
 ## Structure
 
 1. Based on Domain Driven Design folder structure
